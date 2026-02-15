@@ -8,6 +8,9 @@ import obsws_python as obs
 #pip install obsws-python
 #pip install pyvts
 
+#Config
+VTSPort = 4455
+VTSPassword = changeme
 
 PLUGIN_INFO = {
     "plugin_name": "TrackingHider",
@@ -15,7 +18,7 @@ PLUGIN_INFO = {
     "authentication_token_path": "./token.txt"
 }
 
-def set_source_visibility(scene_name, source_name, is_visible, host='localhost', port=4455, password='VrYlmRVkidEkH5TB'):
+def set_source_visibility(scene_name, source_name, is_visible, host='localhost', port=VTSPort, password=VTSPassword):
     """
     Connects to OBS and sets the visibility of a specific source in a scene.
     
@@ -49,8 +52,6 @@ def set_source_visibility(scene_name, source_name, is_visible, host='localhost',
 
     except Exception as e:
         print(f"Failed to connect or update OBS: {e}")
-
-
 
 async def authenticate_with_retry(vts):
     """Handles authentication and deletes bad tokens automatically."""
