@@ -10,7 +10,7 @@ import obsws_python as obs
 
 #Config
 VTSPort = 4455
-VTSPassword = changeme
+VTSPassword = 'changeme' #Keep the quotes, put your password inside. like this, 'meowpass'
 
 PLUGIN_INFO = {
     "plugin_name": "TrackingHider",
